@@ -3,6 +3,7 @@ import Link from "next/link";
 import { dbConnect } from "~~/lib/mongo";
 import { Url } from "~~/model/url-model";
 import CopyButton from "./copy-button";
+import Pagination from "./pagination";
 import { Badge } from "./ui/badge";
 import {
   Card,
@@ -20,9 +21,22 @@ import {
   TableRow,
 } from "./ui/table";
 
-export default async function DataTable() {
+export default async function DataTable({
+  searchParams,
+}: {
+  searchParams: {
+    page?: string;
+  };
+}) {
+  const page = parseInt(searchParams?.page ?? "1");
   await dbConnect();
-  const data = await Url.find();
+  const data = await Url.find()
+    .sort({ createdAt: -1 })
+    .limit(10)
+    .skip((page - 1) * 10)
+    .exec();
+
+  const totalData = await Url.find().countDocuments();
   const hostUrl = process.env.HOST_URL;
   return (
     <Card>
@@ -84,6 +98,9 @@ export default async function DataTable() {
             ))}
           </TableBody>
         </Table>
+        <div className="flex justify-end mt-5">
+          <Pagination totalElements={totalData} />
+        </div>
       </CardContent>
     </Card>
   );

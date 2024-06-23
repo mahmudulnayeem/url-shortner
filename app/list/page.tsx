@@ -1,9 +1,15 @@
 import DataTable from "~~/components/table";
 
-const ListPage = () => {
+const ListPage = ({
+  searchParams,
+}: {
+  searchParams: {
+    page?: string;
+  };
+}) => {
   return (
     <div className="p-2">
-      <DataTable />
+      <DataTable searchParams={searchParams} />
     </div>
   );
 };
