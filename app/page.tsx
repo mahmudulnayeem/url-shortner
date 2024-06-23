@@ -17,7 +17,7 @@ const urlValidationRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
 export default function Home() {
   const [input, setInput] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const hostUrl = process.env.HOST_URL;
+  const hostUrl = window.location.host;
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input) return;
