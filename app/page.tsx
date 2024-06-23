@@ -1,6 +1,7 @@
 "use client";
 import { ClipboardCopyIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { BackgroundBeams } from "~~/components/ui/background-beams";
 import { Button } from "~~/components/ui/button";
 import { PlaceholdersAndVanishInput } from "~~/components/ui/placeholders-and-vanish-input";
@@ -17,7 +18,7 @@ const urlValidationRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
 export default function Home() {
   const [input, setInput] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const hostUrl = window.location.host;
+  const [hostUrl, setHostUrl] = useState("");
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input) return;
@@ -38,6 +39,11 @@ export default function Home() {
     setShortUrl(data.id);
     setInput("");
   };
+
+  useEffect(() => {
+    setHostUrl(window.location.origin);
+  }, []);
+
   return (
     <main className="min-h-screen w-full rounded-md  relative flex flex-col items-center justify-center antialiased">
       <div className="max-w-2xl mx-auto p-4">
@@ -59,6 +65,12 @@ export default function Home() {
           onSubmit={onSubmit}
           inputValue={input}
         />
+        <Link href="/list?page=1">
+          <p className="text-primary max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+            See what users have shorted
+            <span className="ms-2">↗</span>
+          </p>
+        </Link>
       </div>
       {shortUrl && (
         <div className="max-w-2xl mx-auto p-4 mt-4 z-20">
