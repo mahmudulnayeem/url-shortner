@@ -2,7 +2,7 @@ import DataTable from "~~/components/table";
 
 const ListPage = () => {
   return (
-    <div>
+    <div className="p-2">
       <DataTable />
     </div>
   );
