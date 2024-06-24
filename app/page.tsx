@@ -60,7 +60,6 @@ export default function Home() {
           <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
             MINI URI SHORTENER
           </h1>
-          <p></p>
 
           <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
             Shorten your links quickly and easily. Because Shorter is{" "}
