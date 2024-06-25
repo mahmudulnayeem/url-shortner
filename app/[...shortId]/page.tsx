@@ -1,6 +1,10 @@
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { dbConnect } from "~~/lib/mongo";
 import { Url } from "~~/model/url-model";
+export const metadata: Metadata = {
+  title: "Mini URL Shortener | Redirecting...",
+};
 
 const ShortId = async ({ params }: { params: { shortId: string } }) => {
   const { shortId } = params;

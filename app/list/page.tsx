@@ -1,5 +1,9 @@
+import { Metadata } from "next";
 import DataTable from "~~/components/table";
 
+export const metadata: Metadata = {
+  title: "Mini URL Shortener | List",
+};
 const ListPage = ({
   searchParams,
 }: {
