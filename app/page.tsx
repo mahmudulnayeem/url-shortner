@@ -82,7 +82,7 @@ export default function Home() {
           </Link>
         </div>
         {shortUrl && (
-          <div className="max-w-2xl mx-auto p-4 mt-4 z-20">
+          <div className="max-w-2xl mx-auto p-4 mt-4 ">
             <h2 className="text-lg text-center font-semibold">Minified URL</h2>
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xs truncate w-full">{`${hostUrl}/${shortUrl}`}</span>
@@ -108,7 +108,7 @@ export default function Home() {
                     });
                 }}
               >
-                <span className="bg-primary rounded-full text-white px-2 py-0.5 flex items-center gap-1">
+                <span className="bg-primary rounded-full text-white px-2 py-0.5 flex items-center gap-1 z-10">
                   <small> Copy</small>
                   <ClipboardCopyIcon className="size-3" />
                 </span>
