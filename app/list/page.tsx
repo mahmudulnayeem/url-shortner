@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import DataTable from "~~/components/table";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ const ListPage = ({
 }) => {
   return (
     <div className="p-2">
-      <Link href="/list/1">details</Link>
       <DataTable searchParams={searchParams} />
     </div>
   );

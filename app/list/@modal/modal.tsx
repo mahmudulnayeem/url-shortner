@@ -27,7 +27,11 @@ export function Modal({
     <Sheet open={true} onOpenChange={onDismiss}>
       <SheetContent side="right">
         <SheetHeader>
-          {title && <SheetTitle>{title}</SheetTitle>}
+          {title && (
+            <SheetTitle title={title} className="truncate ">
+              {title}
+            </SheetTitle>
+          )}
           <SheetDescription>
             <ScrollArea className="h-[85vh]">{children}</ScrollArea>
           </SheetDescription>

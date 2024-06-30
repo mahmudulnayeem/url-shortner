@@ -57,6 +57,7 @@ export default async function DataTable({
               <TableHead>Long URL</TableHead>
               <TableHead className="table-cell">Short URL</TableHead>
               <TableHead className="table-cell">Total Clicks</TableHead>
+              <TableHead className="table-cell">Analytics</TableHead>
               <TableHead className="table-cell">Create Date</TableHead>
               <TableHead className="text-right">Copy</TableHead>
             </TableRow>
@@ -87,6 +88,9 @@ export default async function DataTable({
                 </TableCell>
                 <TableCell className="table-cell">
                   {url.visitHistory.length}
+                </TableCell>
+                <TableCell className="table-cell">
+                  <Link href={`/list/${url._id}`}>Click to view</Link>
                 </TableCell>
                 <TableCell className="table-cell">
                   {new Date(url.createdAt).toLocaleString()}
