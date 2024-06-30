@@ -6,7 +6,15 @@ export const metadata: Metadata = {
   title: "Mini URL Shortener | Redirecting...",
 };
 
-const ShortId = async ({ params }: { params: { shortId: string } }) => {
+const ShortId = async ({
+  params,
+  searchParams,
+}: {
+  params: { shortId: string };
+  searchParams: {
+    viewport: string;
+  };
+}) => {
   const { shortId } = params;
   await dbConnect();
 
@@ -16,6 +24,7 @@ const ShortId = async ({ params }: { params: { shortId: string } }) => {
       $push: {
         visitHistory: {
           timestamp: Date.now(),
+          deviceType: searchParams?.viewport ?? "",
         },
       },
     }

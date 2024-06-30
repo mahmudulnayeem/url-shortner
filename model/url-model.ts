@@ -16,6 +16,9 @@ const urlSchema = new Schema(
         timestamp: {
           type: Number,
         },
+        deviceType: {
+          type: String,
+        },
       },
     ],
   },
