@@ -12,6 +12,7 @@ const ShortId = async ({
 }: {
   params: { shortId: string };
   searchParams: {
+    // setting the viewport in middleware.ts
     viewport: string;
   };
 }) => {
