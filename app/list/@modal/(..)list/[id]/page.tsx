@@ -105,7 +105,7 @@ const Analytics = async ({
                     {" "}
                     <span className="text-nowrap"> Visit using : </span>
                     <span>
-                      {visit.deviceType ?? "Device information not registered"}
+                      {visit.deviceType ?? "Unknown device type"}
                     </span>{" "}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ const Analytics = async ({
 
 export default Analytics;
 
-type VisitType = {
+export type VisitType = {
   timestamp: number;
   deviceType: string;
   _id: string;
