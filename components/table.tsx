@@ -90,7 +90,13 @@ export default async function DataTable({
                   {url.visitHistory.length}
                 </TableCell>
                 <TableCell className="table-cell">
-                  <Link href={`/list/${url._id}`}>Click to view</Link>
+                  <Link
+                    href={`/list/${url._id}`}
+                    className="flex items-center gap-1 hover:text-primary"
+                  >
+                    <span> view</span>
+                    <ArrowTopRightIcon className="cursor-pointer size-4 " />
+                  </Link>
                 </TableCell>
                 <TableCell className="table-cell">
                   {new Date(url.createdAt).toLocaleString()}

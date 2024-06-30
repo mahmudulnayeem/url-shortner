@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 
-import { ScrollArea } from "~~/components/ui/scroll-area";
 import {
   Sheet,
   SheetContent,
@@ -32,9 +31,7 @@ export function Modal({
               {title}
             </SheetTitle>
           )}
-          <SheetDescription>
-            <ScrollArea className="h-[85vh]">{children}</ScrollArea>
-          </SheetDescription>
+          <SheetDescription>{children}</SheetDescription>
         </SheetHeader>
       </SheetContent>
     </Sheet>
