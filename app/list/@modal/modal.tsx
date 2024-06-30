@@ -16,7 +16,7 @@ export function Modal({
   title,
 }: {
   children: React.ReactNode;
-  title: string;
+  title?: string;
 }) {
   const router = useRouter();
   function onDismiss() {
@@ -25,14 +25,11 @@ export function Modal({
 
   return (
     <Sheet open={true} onOpenChange={onDismiss}>
-      <SheetContent side="bottom" className="h-full">
+      <SheetContent side="right">
         <SheetHeader>
-          <SheetTitle>{title}</SheetTitle>
+          {title && <SheetTitle>{title}</SheetTitle>}
           <SheetDescription>
-            <ScrollArea className="h-[70vh]">{children}</ScrollArea>
-            <div className="mt-2 h-[20vh] ">
-              <p>এখানে কোন বিজ্ঞাপন দেখানো হবে</p>
-            </div>
+            <ScrollArea className="h-[85vh]">{children}</ScrollArea>
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
