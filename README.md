@@ -51,8 +51,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Copy shortened URL
 - View shortened URL details
 - View shortened URL analytics
+- View shortened URL QR code
   <!-- - Copy shortened URL with custom slug -->
-  <!-- - View shortened URL QR code -->
 
 ### Live preview
 
