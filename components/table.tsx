@@ -55,10 +55,18 @@ export default async function DataTable({
           <TableHeader>
             <TableRow>
               <TableHead>Long URL</TableHead>
-              <TableHead className="table-cell">Short URL</TableHead>
-              <TableHead className="table-cell">Total Clicks</TableHead>
-              <TableHead className="table-cell">Analytics</TableHead>
-              <TableHead className="table-cell">Create Date</TableHead>
+              <TableHead className="table-cell text-nowrap ">
+                Short URL
+              </TableHead>
+              <TableHead className="table-cell text-nowrap text-center">
+                Total Clicks
+              </TableHead>
+              <TableHead className="table-cell text-nowrap ">
+                Analytics
+              </TableHead>
+              <TableHead className="table-cell text-nowrap text-center sm:text-left">
+                Create Date
+              </TableHead>
               <TableHead className="text-right">Copy</TableHead>
             </TableRow>
           </TableHeader>
@@ -86,10 +94,10 @@ export default async function DataTable({
                     <ArrowTopRightIcon className="cursor-pointer size-4 " />
                   </Link>
                 </TableCell>
-                <TableCell className="table-cell">
+                <TableCell className="table-cell text-center">
                   {url.visitHistory.length}
                 </TableCell>
-                <TableCell className="table-cell">
+                <TableCell className="table-cell text-center">
                   <Link
                     href={`/list/${url._id}`}
                     className="flex items-center gap-1 hover:text-primary"
@@ -98,7 +106,7 @@ export default async function DataTable({
                     <ArrowTopRightIcon className="cursor-pointer size-4 " />
                   </Link>
                 </TableCell>
-                <TableCell className="table-cell">
+                <TableCell className="table-cell text-nowrap text-center sm:text-left">
                   {new Date(url.createdAt).toLocaleString()}
                 </TableCell>
                 <TableCell className="flex  justify-end">
