@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Modal } from "~~/app/list/@modal/modal";
 import QrCode from "~~/components/qr-code";
 import { ScrollArea } from "~~/components/ui/scroll-area";
+import { dbConnect } from "~~/lib/mongo";
 import { Url } from "~~/model/url-model";
 import Chart from "./Chart";
 
@@ -15,6 +16,7 @@ const Analytics = async ({
   };
 }) => {
   const hostUrl = process.env.HOST_URL;
+  await dbConnect();
   const url = await Url.findOne({ _id: params.id });
   const chartData = [];
 

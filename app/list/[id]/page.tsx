@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "~~/components/ui/table";
+import { dbConnect } from "~~/lib/mongo";
 import { Url } from "~~/model/url-model";
 import Chart from "../@modal/(..)list/[id]/Chart";
 import { VisitType } from "../@modal/(..)list/[id]/page";
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 const DetailsPage = async ({ params }: { params: { id: string } }) => {
   const hostUrl = process.env.HOST_URL;
+  await dbConnect();
   const url = await Url.findOne({ _id: params.id });
   const chartData = [];
 
