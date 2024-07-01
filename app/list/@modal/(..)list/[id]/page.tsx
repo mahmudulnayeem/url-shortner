@@ -2,6 +2,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { Modal } from "~~/app/list/@modal/modal";
+import QrCode from "~~/components/qr-code";
 import { ScrollArea } from "~~/components/ui/scroll-area";
 import { Url } from "~~/model/url-model";
 import Chart from "./Chart";
@@ -40,7 +41,7 @@ const Analytics = async ({
 
   return (
     <Modal title={`Analytics of ${url.redirectUrl}`}>
-      <div className="flex flex-col space-y-4 ">
+      <ScrollArea className="flex flex-col space-y-4 h-[90vh]">
         <p className="flex items-center gap-2">
           {" "}
           <span className="text-nowrap"> Original Url : </span>
@@ -77,7 +78,13 @@ const Analytics = async ({
             <ArrowTopRightIcon className="cursor-pointer size-4 " />
           </Link>{" "}
         </p>
-
+        <div className="size-40 my-4">
+          <QrCode value={`${hostUrl}/${url.shortId}`} />
+        </div>
+        <p className="font-bold text-lg">Page view using device analytics</p>
+        <div className="mt-3 h-[30vh] w-full">
+          <Chart data={chartData} />
+        </div>
         <p className="font-bold text-lg">Visited History</p>
         {url.visitHistory.length === 0 ? (
           <div className="flex items-center justify-center flex-col">
@@ -113,11 +120,7 @@ const Analytics = async ({
             </div>
           </ScrollArea>
         )}
-        <p className="font-bold text-lg">Page view using device analytics</p>
-        <div className="mt-3 h-[30vh] w-full">
-          <Chart data={chartData} />
-        </div>
-      </div>
+      </ScrollArea>
     </Modal>
   );
 };
