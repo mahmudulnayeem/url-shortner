@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started with URL Shortener
 
 1. Clone the repository
 
@@ -54,6 +54,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   <!-- - Copy shortened URL with custom slug -->
   <!-- - View shortened URL QR code -->
 
-<!-- add image preview -->
+### Live preview
+
+[URL Shortener↗](https://miniuri.vercel.app/)
 
 ![preview](./public/og-preview.png)
