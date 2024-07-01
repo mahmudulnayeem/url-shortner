@@ -1,5 +1,5 @@
 const loading = () => {
-  return null;
+  return <></>;
 };
 
 export default loading;

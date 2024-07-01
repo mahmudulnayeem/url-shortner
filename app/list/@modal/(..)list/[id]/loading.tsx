@@ -1,5 +1,5 @@
 const DetailsLoading = () => {
-  return null;
+  return <></>;
 };
 
 export default DetailsLoading;

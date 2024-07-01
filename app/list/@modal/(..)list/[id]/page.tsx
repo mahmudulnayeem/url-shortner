@@ -43,7 +43,7 @@ const Analytics = async ({
 
   return (
     <Modal title={`Analytics of ${url.redirectUrl}`}>
-      <ScrollArea className=" h-[90vh] ">
+      <ScrollArea className=" h-[85vh] sm:h-[90vh] ">
         <div className="flex flex-col space-y-4">
           <p className="flex items-center gap-2">
             {" "}
@@ -84,17 +84,21 @@ const Analytics = async ({
           <div className="size-40 my-4">
             <QrCode value={`${hostUrl}/${url.shortId}`} />
           </div>
+          {url.visitHistory.length !== 0 && (
+            <p className="font-bold text-sm sm:text-lg text-left">
+              Page view using device analytics
+            </p>
+          )}
+          {url.visitHistory.length !== 0 && (
+            <div className="mt-3 h-[25vh] w-3/4">
+              <Chart data={chartData} />
+            </div>
+          )}
           <p className="font-bold text-sm sm:text-lg text-left">
-            Page view using device analytics
-          </p>
-          <div className="mt-3 h-[25vh] w-3/4">
-            <Chart data={chartData} />
-          </div>
-          <p className="font-bold text-sm sm:text-lg text-left">
-            Visited History
+            Visited History ({url.visitHistory.length})
           </p>
           {url.visitHistory.length === 0 ? (
-            <div className="flex items-center justify-center flex-col">
+            <div className="flex items-center justify-start w-3/6 flex-col ">
               <Image
                 src="/not-found.svg"
                 width={100}
@@ -104,7 +108,7 @@ const Analytics = async ({
               <p className="text-gray-500">No visit history recorded yet.</p>
             </div>
           ) : (
-            <ScrollArea className="h-[40vh]">
+            <ScrollArea className="h-[35vh]">
               <div className="flex flex-col space-y-4">
                 {url.visitHistory.map((visit: VisitType) => (
                   <div key={visit._id} className="flex flex-col space-y-2">
