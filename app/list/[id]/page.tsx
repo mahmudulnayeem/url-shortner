@@ -1,6 +1,7 @@
 import { ArrowLeftIcon, ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
+import QrCode from "~~/components/qr-code";
 import {
   Card,
   CardContent,
@@ -104,6 +105,10 @@ const DetailsPage = async ({ params }: { params: { id: string } }) => {
             <ArrowTopRightIcon className="cursor-pointer size-4 " />
           </Link>{" "}
         </p>
+        <div className="size-40">
+          <QrCode value={`${hostUrl}/${url.shortId}`} />
+        </div>
+
         {url.visitHistory.length > 0 && (
           <>
             <p className="font-bold text-lg">
