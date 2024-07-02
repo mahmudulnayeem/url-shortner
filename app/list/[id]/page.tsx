@@ -121,7 +121,9 @@ const DetailsPage = async ({ params }: { params: { id: string } }) => {
             </div>
           </>
         )}
-        <p className="font-bold text-lg">Visited History</p>
+        <p className="font-bold text-lg">
+          Visited History ({url.visitHistory.length})
+        </p>
         {url.visitHistory.length === 0 ? (
           <div className="flex items-center justify-center flex-col h-full">
             <Image
