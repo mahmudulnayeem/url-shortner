@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "~~/components/ui/toaster";
 
-import Banner from "~~/components/ad-banner";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -104,7 +104,17 @@ export default async function RootLayout({
         {children}
         <Toaster />
       </body>
-      <Banner />
+      <Script
+        async
+        data-cfasync="false"
+        src="//commitmentelizabeth.com/e08c4653469aecae42980f39e7ff3353/invoke.js"
+      ></Script>
+      <div id="container-e08c4653469aecae42980f39e7ff3353"></div>
+
+      <Script
+        type="text/javascript"
+        src="//commitmentelizabeth.com/99/20/d2/9920d20c6a49e24d4c345a4ed4cf633b.js"
+      ></Script>
       <GoogleAnalytics gaId="G-HEX9Q97VF4" />
     </html>
   );
