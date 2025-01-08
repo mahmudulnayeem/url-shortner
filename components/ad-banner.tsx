@@ -5,7 +5,7 @@ export default function Banner(): JSX.Element {
 
   useEffect(() => {
     const atOptions = {
-      key: "6c665e27998b6161c3cb2253e92e6d88",
+      key: "/99/20/d2/9920d20c6a49e24d4c345a4ed4cf633b.js",
       format: "iframe",
       height: 50,
       width: 320,
@@ -15,7 +15,7 @@ export default function Banner(): JSX.Element {
       const conf = document.createElement("script");
       const script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = `//www.highperformancedformats.com/${atOptions.key}/invoke.js`;
+      script.src = `//www.commitmentelizabeth.com/${atOptions.key}`;
       conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`;
 
       banner.current.append(conf);
