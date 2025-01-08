@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import { dbConnect } from "~~/lib/mongo";
 import { Url } from "~~/model/url-model";
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ const ShortId = async ({
       },
     }
   );
-  if (entry?.redirectUrl) redirect(entry?.redirectUrl ?? "/");
+  if (entry?.redirectUrl) permanentRedirect(entry?.redirectUrl ?? "/");
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 bg-[url('/icon.png')] bg-left bg-contain bg-no-repeat bg-opacity-10 ">
       <div>
