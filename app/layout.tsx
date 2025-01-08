@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "~~/components/ui/toaster";
 
+import Banner from "~~/components/ad-banner";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -103,6 +104,7 @@ export default async function RootLayout({
         {children}
         <Toaster />
       </body>
+      <Banner />
       <GoogleAnalytics gaId="G-HEX9Q97VF4" />
     </html>
   );
