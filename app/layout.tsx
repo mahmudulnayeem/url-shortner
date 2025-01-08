@@ -104,7 +104,6 @@ export default async function RootLayout({
         <Toaster />
       </body>
       <GoogleAnalytics gaId="G-HEX9Q97VF4" />
-      <script type='text/javascript' src='//commitmentelizabeth.com/99/20/d2/9920d20c6a49e24d4c345a4ed4cf633b.js'></script>
     </html>
   );
 }
